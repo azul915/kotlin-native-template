@@ -4,8 +4,9 @@ services:
     build:
       context: .
       dockerfile: ./docker/Dockerfile
-      target: dev
+      target: builder
     working_dir: /usr/local
+    command: ["/bin/sh", "-c", "tail -f /dev/null"]
     tty: true
     volumes:
     - ./src:/usr/local/src
